@@ -1,0 +1,48 @@
+div.section-payment {
+  height: 100vh;
+}
+
+div.card {
+  max-height: 85vh;
+  height: 85vh;
+  overflow-y: hidden;
+}
+
+div.card-body {
+  overflow-y: scroll;
+  height: 60vh;
+  max-height: 100%;
+  padding: 5px 5px 5px 5px;
+}
+
+div.card-footer {
+  height: 60px;
+}
+
+button.float-left {
+  float: left;
+}
+
+button.float-right {
+  float: right;
+}
+
+@media (max-width: 576px) and (orientation: portrait) {
+  div.card {
+    max-height: 90vh;
+    height: 90vh;
+    overflow-y: hidden;
+  }
+
+  div.card-body {
+    overflow-y: hidden;
+    height: 90vh;
+    max-height: 90vh;
+    max-height: 100%;
+    padding: 5px 5px 5px 5px;
+  }
+
+  div.card-footer {
+    height: 60px;
+  }
+}

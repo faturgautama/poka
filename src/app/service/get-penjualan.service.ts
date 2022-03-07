@@ -1,0 +1,53 @@
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class GetPenjualanService {
+
+    private httpHeaders: any;
+
+    constructor(private httpClient: HttpClient) {
+        this.httpHeaders = new HttpHeaders();
+        this.httpHeaders = this.httpHeaders.set('Content-Type', 'application/json');
+    }
+
+    defaultGetRequest(url: string = "penjualan.json") {
+        let searchParams = new HttpParams();
+        searchParams = searchParams.append('print', 'pretty');
+        searchParams = searchParams.append('custom', 'json');
+
+        return this.httpClient.get<any>(
+            `${environment.urlFirebase}` + url,
+            {
+                params: searchParams
+            }
+        ).pipe(
+            catchError(this.handleError),
+            map((result: { [key: string]: any }) => {
+                // console.log(result);
+
+                let data = [];
+
+                for (const key in result) {
+                    if (result.hasOwnProperty(key)) {
+                        data.push({ ...result[key], id: key })
+                    }
+                }
+
+                return data;
+            })
+        )
+    }
+
+    private handleError(httpErrorResponse: HttpErrorResponse) {
+        let pesanError = "Oops... Error Occured";
+
+        if (httpErrorResponse.error)
+            return throwError(pesanError);
+    }
+}

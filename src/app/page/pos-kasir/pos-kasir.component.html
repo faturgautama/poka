@@ -1,0 +1,86 @@
+<div class="section-pos p-2">
+    <div class="row px-0 mx-0">
+        <!-- Tombol -->
+        <div class="col-lg-12 col-md-12 col-sm-12 mb-2 px-1">
+            <button class="btn btn-outline-light btn-sm float-left" (click)="onClickBackToHome()">
+                Kembali
+            </button>
+            <button class="btn btn-warning btn-sm float-right" (click)="onSubmitPenjualan(cart)">
+                Proses Pembayaran
+            </button>
+        </div>
+
+        <!-- Total Belanja -->
+        <div class="col-lg-6 col-md-6 col-sm-12 px-1 mb-2">
+            <div class="card card-total-belanja">
+                <div class="card-header text-center text-secondary">
+                    <h5 class="card-title mb-0">
+                        TOTAL BELANJA
+                    </h5>
+                </div>
+                <div class="card-body" style="overflow-x: hidden;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item py-1 px-1" *ngFor="let cartItem of cart; let indexOfElemet = index">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <p class="card-title mb-0 float-left">{{ cartItem.namaProduk }} </p>
+                                    <p class="card-title mb-0 float-right">{{ cartItem.total | currency: 'Rp. ' }} </p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <span class="badge bg-danger float-left"
+                                        (click)="onDeleteCart(cart, indexOfElemet)">Hapus</span>
+                                    <p class="card-text mb-0 float-right">{{ cartItem.qty }}
+                                        <span>@ {{ cartItem.hargaJualProduk | currency: 'Rp. ' }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer footer-total-belanja">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <p class="card-title mb-0 float-left">Total Belanja </p>
+                        <p class="card-text float-right">{{ totalBelanja | currency: 'Rp. ' }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div class="col-lg-6 col-md-6 col-sm-12 px-1">
+            <div class="card card-main-menu">
+                <div class="card-header text-center text-secondary">
+                    <h5 class="card-title mb-0">
+                        MAIN MENU
+                    </h5>
+                </div>
+                <div class="card-body p-1" style="overflow-x: hidden;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item py-1 px-1" *ngFor="let item of mainMenu" (click)="onClickMenu(item)">
+                            <div class="row" id="{{ item.id }}">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <p class="card-title mb-0 float-left">{{ item.namaProduk }} </p>
+                                    <p class="card-title mb-0 float-right">
+                                        {{ item.hargaJualProduk | currency: 'Rp. ' }}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer" *ngIf="toggleNumericTextbox">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-7 float-left">
+                            <ngx-number-spinner [value]="1" [min]="1" #number class="float-left"></ngx-number-spinner>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 float-right px-1 pt-2">
+                            <button class="btn btn-sm btn-primary ml-2" (click)="onSaveToCart(number.value)">
+                                Tambah Ke Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

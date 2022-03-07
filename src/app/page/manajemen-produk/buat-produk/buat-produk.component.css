@@ -1,0 +1,68 @@
+div.section-buat-produk {
+  height: 100vh;
+}
+
+div.card.buat-produk {
+  max-height: 90vh;
+  height: 90vh;
+  overflow-y: hidden;
+}
+
+div.card.buat-produk > .card-body {
+  overflow-y: scroll;
+  height: 90vh;
+  max-height: 90vh;
+  padding: 5px 5px 5px 5px;
+}
+
+div.card.buat-produk > .card-footer {
+  height: 60px;
+}
+
+button.float-left {
+  float: left;
+}
+
+button.float-right {
+  float: right;
+}
+
+p.float-left {
+  float: left;
+}
+
+p.float-right {
+  float: right;
+}
+
+div.alert {
+  height: 65px;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+p.badge.bg-warning {
+  cursor: pointer;
+}
+
+@media (max-width: 576px) and (orientation: portrait) {
+  div.card.buat-produk {
+    max-height: 90vh;
+    height: 90vh;
+    overflow-y: hidden;
+  }
+
+  div.card.buat-produk > .card-body {
+    overflow-y: hidden;
+    height: 90vh;
+    max-height: 90vh;
+    padding: 5px 5px 5px 5px;
+    overflow-x: hidden;
+  }
+
+  div.card.buat-produk > .card-footer {
+    height: 60px;
+  }
+}

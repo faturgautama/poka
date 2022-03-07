@@ -1,0 +1,48 @@
+<div class="section-manajemen-penjualan p-2">
+    <div class="row px-0 mx-0">
+        <!-- Tombol -->
+        <div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+            <div class="row justify-content-between">
+                <div class="col-lg-2 col-md-2 col-sm-2 px-1">
+                    <button class="btn btn-outline-light btn-sm" (click)="onClickBackToHome()">
+                        Kembali
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="col-lg-12 col-md-12 col-sm-12 mb-2 px-1">
+            <div class="card">
+                <div class="card-header text-center text-secondary">
+                    <h5 class="card-title mb-0">
+                        PENJUALAN ANDA
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- TOTAL PENJUALAN -->
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center mb-2 ">
+                            <h4 class="card-title mb-0 pb-2 border-bottom">
+                                {{ totalPenjualan | currency: 'Rp. ' }}
+                            </h4>
+                        </div>
+
+                        <!-- TOTAL PENJUALAN PER HARI -->
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center mb-2">
+                            <canvas baseChart [data]="chartPieData" [labels]="chartPieLabel" [chartType]="chartPieType"
+                                [options]="chartPieOptions" [legend]="true"></canvas>
+                        </div>
+
+                        <!-- TOTAL PENJUALAN PER ITEM -->
+                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <canvas baseChart [data]="chartBarData" [labels]="chartBarLabel" [chartType]="chartBarType"
+                                [options]="chartBarOptions" [legend]="true"></canvas>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

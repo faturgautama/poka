@@ -1,0 +1,119 @@
+dov.section-pos {
+  max-height: 100vh;
+  height: 100vh;
+}
+
+div.card {
+  max-height: 85vh;
+  height: 85vh;
+  overflow-y: hidden;
+}
+
+div.card-body {
+  overflow-y: scroll;
+  height: 60vh;
+  max-height: 100%;
+  padding: 5px 5px 5px 5px;
+}
+
+div.card-footer {
+  height: 60px;
+}
+
+div.card-footer.footer-total-belanja {
+  padding: 20px 20px 0px 10px;
+}
+
+.total-belanja {
+  height: 60vh;
+  max-height: 100%;
+  padding: 5px 5px 5px 5px;
+}
+
+.active {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 151, 181, 1) 30%,
+    rgba(0, 144, 173, 1) 56%
+  );
+  color: white;
+}
+
+.sleep {
+  background-color: transparent;
+}
+
+button.float-left {
+  float: left;
+}
+
+button.float-right {
+  float: right;
+}
+
+p.float-left {
+  float: left;
+}
+
+p.float-right {
+  float: right;
+}
+
+span.float-left {
+  float: left;
+}
+
+div.col-lg-7.col-md-7.col-sm-7.float-left {
+  float: left !important;
+  /* max-width: 40vw;
+  width: 40vw; */
+}
+
+@media (max-width: 576px) and (orientation: portrait) {
+  div.card {
+    max-height: 45vh;
+    height: 45vh;
+    overflow-y: hidden;
+  }
+
+  div.card.card-total-belanja {
+    max-height: 40vh;
+    height: 40vh;
+    overflow-y: hidden;
+  }
+
+  div.card.card-main-menu {
+    max-height: 50vh;
+    height: 50vh;
+    overflow-y: hidden;
+  }
+
+  div.card-body {
+    overflow-y: scroll;
+    height: 40vh;
+    max-height: 100%;
+    padding: 5px 5px 5px 5px;
+  }
+
+  div.card-footer {
+    height: 60px;
+    max-height: 60px;
+  }
+
+  div.card-footer.footer-total-belanja {
+    padding: 0.6rem;
+  }
+
+  div.col-lg-7.col-md-7.col-sm-7.float-left {
+    float: left !important;
+    max-width: 45vw;
+    width: 45vw;
+  }
+
+  div.col-lg-5.col-md-5.col-sm-5.float-right {
+    float: right !important;
+    max-width: 45vw;
+    width: 45vw;
+    text-align: right;
+  }
+}

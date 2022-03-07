@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-angular-inputs/styles/material.css";
+
+body {
+  background: rgb(0, 151, 181);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 151, 181, 1) 30%,
+    rgba(0, 144, 173, 1) 56%
+  );
+  font-family: "Poppins", sans-serif !important;
+}
+
+.swal2-popup {
+  width: 30em !important;
+  height: 20em !important;
+  max-height: 100% !important;
+  font-size: 12px !important;
+}
+
+@media (max-width: 567px) and (orientation: portrait) {
+  .swal2-popup {
+    width: 26em !important;
+    height: 22em !important;
+    max-height: 100% !important;
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,71 @@
+div.section-manajemen-produk {
+  height: 100vh;
+}
+
+div.card.produk-anda {
+  max-height: 90vh;
+  height: 90vh;
+  overflow-y: hidden;
+}
+
+div.card.produk-anda > .card-body {
+  overflow-y: scroll;
+  height: 90vh;
+  max-height: 90vh;
+  padding: 5px 5px 5px 5px;
+}
+
+div.card.produk-anda > .card-footer {
+  height: 60px;
+}
+
+button.float-left {
+  float: left;
+}
+
+button.float-right {
+  float: right;
+}
+
+p.float-left {
+  float: left;
+}
+
+p.float-right {
+  float: right;
+}
+
+div.alert {
+  height: 95px;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+p.badge.bg-warning {
+  cursor: pointer;
+}
+
+h5.alert-heading.font-weight-600 {
+  float: left;
+}
+
+@media (max-width: 576px) and (orientation: portrait) {
+  div.card.produk-anda {
+    max-height: 90vh;
+    height: 90vh;
+    overflow-y: hidden;
+  }
+
+  div.card.produk-anda > .card-body {
+    overflow-y: hidden;
+    height: 90vh;
+    max-height: 90vh;
+    padding: 5px 5px 5px 5px;
+  }
+
+  div.card.produk-anda > .card-footer {
+    height: 60px;
+  }
+}

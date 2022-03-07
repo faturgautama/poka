@@ -1,0 +1,42 @@
+.container {
+  height: 100vh;
+}
+
+.div-image {
+  height: 100vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+}
+
+.welcome-image {
+  height: auto;
+  width: 100%;
+}
+
+div.card {
+  cursor: pointer;
+}
+
+@media (max-width: 567px) and (orientation: portrait) {
+  div.container {
+    max-height: 100vh;
+  }
+
+  div.div-image {
+    max-height: 30vh;
+    height: 30vh;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  div.div-welcome-image {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  img.welcome-image {
+    height: auto;
+    width: 75%;
+  }
+}

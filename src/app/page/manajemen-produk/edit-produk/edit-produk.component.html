@@ -1,0 +1,64 @@
+<div class="section-buat-produk p-2">
+    <div class="row px-0 mx-0">
+        <!-- Tombol -->
+        <div class="col-lg-12 col-md-12 col-sm-12 mb-2 px-1">
+            <button class="btn btn-outline-light btn-sm float-left" (click)="onClickBackToManajemenProduk()">
+                Kembali
+            </button>
+            <button class="btn btn-warning btn-sm float-right"
+                (click)="onSubmitEditProdukForm(formEditProduk.value, dataProduk.id)">
+                Simpan Produk
+            </button>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 px-1">
+            <div class="card buat-produk">
+                <div class="card-header text-center text-secondary">
+                    <h5 class="card-title mb-0">
+                        BUAT PRODUK BARU
+                    </h5>
+                </div>
+                <div class="card-body pt-3">
+                    <form [formGroup]="formEditProduk"
+                        (ngSubmit)="onSubmitEditProdukForm(formEditProduk.value, dataProduk.id)">
+                        <div class="row">
+                            <!-- Nama Produk -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 px-3 mb-3">
+                                <label for="nama" class="form-label mb-1">Nama Produk</label>
+                                <input class="form-control" type="text" formControlName="nama" #namaProduk required>
+                            </div>
+
+                            <!-- Harga Beli Produk -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 px-3 mb-3">
+                                <label for="nama" class="form-label mb-1">Harga Beli Produk</label>
+                                <input class="form-control" type="text" formControlName="hargaBeli" #hargaBeliProduk
+                                    required>
+                            </div>
+
+                            <!-- Harga Jual Produk -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 px-3 mb-3">
+                                <label for="nama" class="form-label mb-1">Harga Jual Produk</label>
+                                <input class="form-control" type="text" formControlName="hargaJual" #hargaJualProduk
+                                    required>
+                            </div>
+
+                            <!-- Sisa Stok Produk -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 px-3 mb-3">
+                                <label for="nama" class="form-label mb-1">Sisa Stok Produk</label>
+                                <input class="form-control" type="text" formControlName="jumlahStok" #sisaStokProduk
+                                    required>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 px-3 mb-2">
+                                <button class="btn btn-danger btn-sm float-right" type="button"
+                                    (click)="onDeleteProduk(dataProduk.id)">
+                                    Hapus Produk
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
